@@ -1,0 +1,32 @@
+# Maven
+target/
+*.class
+*.jar
+*.war
+*.zip
+
+# IDE
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# AEM
+*.aem
+aem-quickstart*.jar
+license.properties
+crx-quickstart/
+
+# Node / Frontend
+node/
+node_modules/
+dist/
+
+# Logs
+*.log
