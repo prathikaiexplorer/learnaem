@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.learnaem</groupId>
+        <artifactId>learnaem</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>learnaem.all</artifactId>
+    <packaging>content-package</packaging>
+    <name>LearnAEM - All Package</name>
+    <description>Single deployable package that embeds all sub-packages and the OSGi bundle</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.learnaem</groupId>
+            <artifactId>learnaem.ui.apps</artifactId>
+            <version>${project.version}</version>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>com.learnaem</groupId>
+            <artifactId>learnaem.ui.content</artifactId>
+            <version>${project.version}</version>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>com.learnaem</groupId>
+            <artifactId>learnaem.ui.config</artifactId>
+            <version>${project.version}</version>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>com.adobe.cq</groupId>
+            <artifactId>core.wcm.components.all</artifactId>
+            <type>zip</type>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.jackrabbit</groupId>
+                <artifactId>filevault-package-maven-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <group>com.learnaem</group>
+                    <name>learnaem.all</name>
+                    <packageType>container</packageType>
+                    <embeddeds>
+                        <!-- Embed OSGi core bundle -->
+                        <embedded>
+                            <groupId>com.learnaem</groupId>
+                            <artifactId>learnaem.core</artifactId>
+                            <target>/apps/learnaem-packages/application/install</target>
+                        </embedded>
+                        <!-- Embed sub-packages -->
+                        <embedded>
+                            <groupId>com.learnaem</groupId>
+                            <artifactId>learnaem.ui.apps</artifactId>
+                            <type>zip</type>
+                            <target>/apps/learnaem-packages/application/install</target>
+                        </embedded>
+                        <embedded>
+                            <groupId>com.learnaem</groupId>
+                            <artifactId>learnaem.ui.config</artifactId>
+                            <type>zip</type>
+                            <target>/apps/learnaem-packages/application/install</target>
+                        </embedded>
+                        <embedded>
+                            <groupId>com.learnaem</groupId>
+                            <artifactId>learnaem.ui.content</artifactId>
+                            <type>zip</type>
+                            <target>/apps/learnaem-packages/content/install</target>
+                        </embedded>
+                        <!-- AEM Core Components -->
+                        <embedded>
+                            <groupId>com.adobe.cq</groupId>
+                            <artifactId>core.wcm.components.all</artifactId>
+                            <type>zip</type>
+                            <target>/apps/learnaem-packages/application/install</target>
+                        </embedded>
+                    </embeddeds>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.day.jcr.vault</groupId>
+                <artifactId>content-package-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>install-package</id>
+                        <goals>
+                            <goal>install</goal>
+                        </goals>
+                        <configuration>
+                            <targetURL>http://${aem.host}:${aem.port}/crx/packmgr/service.jsp</targetURL>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

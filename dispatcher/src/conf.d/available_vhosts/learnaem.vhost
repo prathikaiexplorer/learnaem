@@ -1,0 +1,12 @@
+# LearnAEM VHost Configuration
+# Place your AEM as a Cloud Service dispatcher vhost rules here.
+<VirtualHost *:80>
+    ServerName "publish"
+    DocumentRoot "${DOCROOT}"
+    ErrorLog "/var/log/httpd/learnaem-error.log"
+    AddDefaultCharset utf-8
+
+    SetEnvIf X-Forwarded-Proto https HTTPS=on
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+</VirtualHost>

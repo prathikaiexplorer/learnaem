@@ -1,0 +1,4 @@
+# LearnAEM Dispatcher Filters
+/0001 { /type "deny"  /method '?' /url '*' }
+/0002 { /type "allow" /method 'GET' /url '/content/learnaem/*' }
+/0003 { /type "allow" /method 'GET' /url '/libs/granite/csrf/token.json' }

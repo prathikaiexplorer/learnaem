@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.learnaem</groupId>
+        <artifactId>learnaem</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>learnaem.analyse</artifactId>
+    <packaging>pom</packaging>
+    <name>LearnAEM - Analyse</name>
+    <description>Runs the AEM Analyser Maven Plugin to validate the all package for AEMaaCS compatibility</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.learnaem</groupId>
+            <artifactId>learnaem.all</artifactId>
+            <version>${project.version}</version>
+            <type>zip</type>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.adobe.aem</groupId>
+                <artifactId>aemanalyser-maven-plugin</artifactId>
+                <version>${aem.analyser.version}</version>
+                <executions>
+                    <execution>
+                        <id>aem-analyser</id>
+                        <goals>
+                            <goal>project-analyse</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
