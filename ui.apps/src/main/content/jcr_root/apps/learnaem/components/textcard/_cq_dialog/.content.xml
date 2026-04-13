@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TextCard Component Dialog
+  Demonstrates:
+  - Granite UI / Coral UI dialog structure
+  - Basic text field widgets (textfield)
+  - Dialog tabs for organizing fields
+  - granite:data for field metadata
+-->
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Text Card"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+
+                    <!-- TAB 1: Content -->
+                    <content
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Content"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+
+                                    <!-- Title Field -->
+                                    <title
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Title"
+                                        fieldDescription="The main heading for this card."
+                                        name="./title"
+                                        required="{Boolean}false"
+                                        emptyText="Enter card title..."/>
+
+                                    <!-- Description Field -->
+                                    <description
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                        fieldLabel="Description"
+                                        fieldDescription="Short descriptive text to display in the card body."
+                                        name="./description"
+                                        required="{Boolean}false"
+                                        rows="4"
+                                        emptyText="Enter description text..."/>
+
+                                </items>
+                            </column>
+                        </items>
+                    </content>
+
+                    <!-- TAB 2: Link -->
+                    <link
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Link"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+
+                                    <!-- Link Text -->
+                                    <linkText
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Link Text"
+                                        fieldDescription="Label for the call-to-action button/link."
+                                        name="./linkText"
+                                        emptyText="e.g. Learn More"/>
+
+                                    <!-- Link URL -->
+                                    <linkUrl
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="Link URL"
+                                        fieldDescription="Target URL or internal AEM page path for the CTA."
+                                        name="./linkUrl"
+                                        rootPath="/content"
+                                        emptyText="/content/learnaem/... or https://"/>
+
+                                </items>
+                            </column>
+                        </items>
+                    </link>
+
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

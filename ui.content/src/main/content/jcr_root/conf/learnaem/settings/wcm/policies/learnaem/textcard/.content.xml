@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Policy for the TextCard component.
+  Phase 1: No special policy properties needed — all fields are author-configurable.
+  Future phases will add locked/default values here via cq:policy nodes.
+-->
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Text Card Policy"
+          sling:resourceType="learnaem/components/textcard"/>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Component Policy for TextCard.
+  In AEMaaCS, policies are defined per template and control what components are allowed
+  and what default property values they get. This is the policy container node.
+-->
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          jcr:primaryType="sling:Folder"
+          jcr:title="LearnAEM Component Policies"/>

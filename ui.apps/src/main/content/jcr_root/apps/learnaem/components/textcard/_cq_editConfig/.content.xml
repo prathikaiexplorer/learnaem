@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Edit Config for TextCard.
+  Defines the component behaviour in Edit mode (AEM authoring layer).
+  - actions: EDIT, COPYMOVE, DELETE are enabled by default via inheritance
+  - emptyLabel: shown in authoring when the component has no content yet
+-->
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          cq:actions="[EDIT, COPYMOVE, DELETE, INSERT]"
+          cq:dialogMode="floating"
+          cq:emptyText="Text Card — click to configure"
+          cq:inherit="{Boolean}false"
+          jcr:primaryType="cq:EditConfig"/>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TextCard Component
+  - Simple AEM component for Phase 1 learning
+  - Demonstrates: cq:Component node, componentGroup, HTL, Granite UI dialog
+-->
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="cq:Component"
+          jcr:title="Text Card"
+          jcr:description="A simple text card component with a title, description, and a CTA link. Phase 1 learning component."
+          componentGroup="LearnAEM - Content"
+          sling:resourceSuperType="core/wcm/components/commons/v1/template"/>

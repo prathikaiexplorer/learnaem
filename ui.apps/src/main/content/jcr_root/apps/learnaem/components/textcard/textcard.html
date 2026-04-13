@@ -1,0 +1,37 @@
+<!--/*
+    TextCard Component - HTL (Sightly) Template
+
+    Demonstrates:
+    - data-sly-use to instantiate the Sling Model
+    - data-sly-test for conditional rendering
+    - Proper AEM component structure with cq:include for parsys
+*/-->
+<sly data-sly-use.model="com.learnaem.core.models.TextCardModel"/>
+
+<div class="learnaem-textcard" itemscope itemtype="http://schema.org/Article">
+
+    <div class="learnaem-textcard__header">
+        <!--/* Render title only if it has a value */-->
+        <h2 class="learnaem-textcard__title"
+            data-sly-test="${model.title}">
+            ${model.title}
+        </h2>
+    </div>
+
+    <div class="learnaem-textcard__body">
+        <p class="learnaem-textcard__description"
+           data-sly-test="${model.description}">
+            ${model.description}
+        </p>
+    </div>
+
+    <div class="learnaem-textcard__footer">
+        <!--/* Render CTA link only if linkUrl is set and not the default '#' placeholder */-->
+        <a class="learnaem-textcard__cta"
+           href="${model.linkUrl @ context='uri'}"
+           data-sly-test="${model.linkText}">
+            ${model.linkText}
+        </a>
+    </div>
+
+</div>

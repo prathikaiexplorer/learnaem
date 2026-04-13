@@ -1,0 +1,14 @@
+{
+  "textcard": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "learnaem/components/textcard",
+    "title": "Test Title",
+    "description": "Test description.",
+    "linkText": "Click Here",
+    "linkUrl": "https://example.com"
+  },
+  "empty": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "learnaem/components/textcard"
+  }
+}
