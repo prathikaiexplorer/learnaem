@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Content Page Component
+  - Extends base-page via sling:resourceSuperType
+  - Used by the 'content-page' editable template
+-->
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="cq:Component"
+          jcr:title="Content Page"
+          jcr:description="General purpose content page. Allows the full component set."
+          componentGroup=".hidden"
+          sling:resourceSuperType="learnaem/components/page/base-page"
+          cq:isContainer="{Boolean}true"/>

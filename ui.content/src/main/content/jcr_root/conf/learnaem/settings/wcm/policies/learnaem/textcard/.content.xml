@@ -1,12 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Policy for the TextCard component.
-  Phase 1: No special policy properties needed — all fields are author-configurable.
-  Future phases will add locked/default values here via cq:policy nodes.
+  TextCard Component Policy with Style System definitions.
+
+  AEM Style System works by:
+  1. Defining styles here in the policy (each style = a CSS class name)
+  2. Author picks a style in the 'Style' tab of the component dialog
+  3. AEM adds that CSS class to the component's wrapper <div>
+  4. Your clientlib CSS targets that class to apply visual changes
+
+  Styles defined here:
+    Background Colors : cq-style-bg-white, cq-style-bg-light-grey, cq-style-bg-dark
+    Layout            : cq-style-layout-bordered, cq-style-layout-shadowed
+    Text Alignment    : cq-style-text-center
 -->
-<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0"
-          xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
           xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
           jcr:primaryType="nt:unstructured"
           jcr:title="Text Card Policy"
-          sling:resourceType="learnaem/components/textcard"/>
+          sling:resourceType="wcm/core/components/policy/policy">
+
+    <!-- Style System groups -->
+    <cq:styleGroups jcr:primaryType="nt:unstructured">
+
+        <!-- GROUP 1: Background Color -->
+        <cq:styleGroup
+            jcr:primaryType="nt:unstructured"
+            cq:styleGroupLabel="Background Color">
+            <cq:styles jcr:primaryType="nt:unstructured">
+                <item0
+                    jcr:primaryType="nt:unstructured"
+                    cq:styleLabel="White"
+                    cq:style="cq-style-bg-white"/>
+                <item1
+                    jcr:primaryType="nt:unstructured"
+                    cq:styleLabel="Light Grey"
+                    cq:style="cq-style-bg-light-grey"/>
+                <item2
+                    jcr:primaryType="nt:unstructured"
+                    cq:styleLabel="Dark"
+                    cq:style="cq-style-bg-dark"/>
+            </cq:styles>
+        </cq:styleGroup>
+
+        <!-- GROUP 2: Card Style -->
+        <cq:styleGroup
+            jcr:primaryType="nt:unstructured"
+            cq:styleGroupLabel="Card Style">
+            <cq:styles jcr:primaryType="nt:unstructured">
+                <item0
+                    jcr:primaryType="nt:unstructured"
+                    cq:styleLabel="Bordered"
+                    cq:style="cq-style-card-bordered"/>
+                <item1
+                    jcr:primaryType="nt:unstructured"
+                    cq:styleLabel="Shadowed"
+                    cq:style="cq-style-card-shadowed"/>
+            </cq:styles>
+        </cq:styleGroup>
+
+        <!-- GROUP 3: Text Alignment -->
+        <cq:styleGroup
+            jcr:primaryType="nt:unstructured"
+            cq:styleGroupLabel="Text Alignment">
+            <cq:styles jcr:primaryType="nt:unstructured">
+                <item0
+                    jcr:primaryType="nt:unstructured"
+                    cq:styleLabel="Center Aligned"
+                    cq:style="cq-style-text-center"/>
+            </cq:styles>
+        </cq:styleGroup>
+
+    </cq:styleGroups>
+</jcr:root>

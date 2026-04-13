@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Articles section root — uses article-page template
+  Path: /content/learnaem/en/articles
+-->
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="cq:Page">
+    <jcr:content
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Articles"
+        sling:resourceType="learnaem/components/page/article-page"
+        cq:conf="/conf/learnaem"
+        cq:template="/conf/learnaem/settings/wcm/templates/article-page"
+        pageTitle="Articles"
+        description="LearnAEM articles section — article page template demo."/>
+</jcr:root>

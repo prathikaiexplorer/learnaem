@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Base Page Component
+  - Inherits from AEM Core Components page (v3) using sling:resourceSuperType
+  - Both content-page and article-page extend this base
+  - Demonstrates: page component hierarchy, resource super type inheritance
+-->
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="cq:Component"
+          jcr:title="LearnAEM Base Page"
+          jcr:description="Abstract base page component. Not used directly — extended by content-page and article-page."
+          componentGroup=".hidden"
+          sling:resourceSuperType="core/wcm/components/page/v3/page"
+          cq:isContainer="{Boolean}true"/>
