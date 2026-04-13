@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Root content node for LearnAEM site.
-  cq:conf links this content tree to our /conf/learnaem configuration
-  so AEM knows which templates and policies to use.
+  English language root page.
+  Hierarchy: /content/learnaem/en  (language root)
 -->
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
           xmlns:cq="http://www.day.com/jcr/cq/1.0"
@@ -10,7 +9,7 @@
           jcr:primaryType="cq:Page">
     <jcr:content
         jcr:primaryType="cq:PageContent"
-        jcr:title="LearnAEM"
+        jcr:title="English"
         sling:resourceType="learnaem/components/page/content-page"
         cq:conf="/conf/learnaem"
         cq:template="/conf/learnaem/settings/wcm/templates/content-page"/>

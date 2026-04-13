@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Article Page Component
+  - Extends base-page via sling:resourceSuperType
+  - Used by the 'article-page' editable template
+  - Will have a narrower content well via its own CSS in a later phase
+-->
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="cq:Component"
+          jcr:title="Article Page"
+          jcr:description="Editorial article/blog page. Narrower content well, suited to long-form reading."
+          componentGroup=".hidden"
+          sling:resourceSuperType="learnaem/components/page/base-page"
+          cq:isContainer="{Boolean}true"/>

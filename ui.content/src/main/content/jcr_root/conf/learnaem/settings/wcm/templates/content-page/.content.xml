@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Content Page Editable Template
+  - General purpose content page for the LearnAEM site
+  - Demonstrates: cq:Template node, allowedPaths, rankingOrder
+-->
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="cq:Template"
+          jcr:title="Content Page"
+          jcr:description="General purpose content page for LearnAEM site. Includes a header, main parsys, and footer."
+          allowedPaths="[/content/learnaem(/.*)?, /content/learnaem]"
+          ranking="{Long}1"
+          status="editable">
+    <jcr:content
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Content Page"
+        sling:resourceType="learnaem/components/page/content-page"
+        cq:conf="/conf/learnaem"
+        cq:designPath="/apps/learnaem/designs/default"/>
+</jcr:root>

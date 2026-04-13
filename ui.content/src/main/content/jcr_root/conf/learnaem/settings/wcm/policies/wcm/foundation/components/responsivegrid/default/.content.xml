@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Responsive Grid Policy for Content Page template.
+  - Allowed component groups control what appears in the component browser.
+  - TextCard is enabled along with Core Components essentials.
+-->
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Content Page - Grid Policy"
+          sling:resourceType="wcm/core/components/policy/policy"
+          components="[LearnAEM - Content,Core Components - Content,Core Components - General,Wcm foundation - General]">
+    <!--
+      'components' lists the allowed componentGroups.
+      LearnAEM - Content  => our TextCard component
+      Core Components     => Text, Image, Title etc from WCM Core Components
+    -->
+</jcr:root>

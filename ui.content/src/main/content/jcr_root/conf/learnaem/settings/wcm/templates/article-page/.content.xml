@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Article Page Editable Template
+  - Structured article/blog style page with restricted component set
+  - Demonstrates: second template, different allowedPaths, editorial structure
+-->
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="cq:Template"
+          jcr:title="Article Page"
+          jcr:description="Editorial article/blog page template for LearnAEM. Optimised for long-form reading with a narrower content well."
+          allowedPaths="[/content/learnaem(/.*)?, /content/learnaem]"
+          ranking="{Long}2"
+          status="editable">
+    <jcr:content
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Article Page"
+        sling:resourceType="learnaem/components/page/article-page"
+        cq:conf="/conf/learnaem"
+        cq:designPath="/apps/learnaem/designs/default"/>
+</jcr:root>
