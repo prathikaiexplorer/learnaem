@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   TextCard Component Dialog
-  Demonstrates:
-  - Granite UI / Coral UI dialog structure
-  - Basic text field widgets (textfield)
-  - Dialog tabs for organizing fields
-  - granite:data for field metadata
+  FIX: replaced fixedcolumns (side-by-side layout) with container + well
+       so fields stack vertically one after the other.
+
+  Key layout rules in Granite UI:
+  - fixedcolumns  → renders children side by side in equal-width columns
+  - container     → renders children as a vertical stack (block flow)
+  - well          → a container with a subtle background, standard for dialog field groups
 -->
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
           xmlns:cq="http://www.day.com/jcr/cq/1.0"
@@ -25,15 +27,18 @@
                 maximized="{Boolean}true">
                 <items jcr:primaryType="nt:unstructured">
 
-                    <!-- TAB 1: Content -->
+                    <!-- ==========================================
+                         TAB 1: Content
+                         container → well → fields stack vertically
+                         ========================================== -->
                     <content
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Content"
                         sling:resourceType="granite/ui/components/coral/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <column
+                            <well
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                sling:resourceType="granite/ui/components/coral/foundation/well">
                                 <items jcr:primaryType="nt:unstructured">
 
                                     <!-- Title Field -->
@@ -58,19 +63,21 @@
                                         emptyText="Enter description text..."/>
 
                                 </items>
-                            </column>
+                            </well>
                         </items>
                     </content>
 
-                    <!-- TAB 2: Link -->
+                    <!-- ==========================================
+                         TAB 2: Link
+                         ========================================== -->
                     <link
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Link"
                         sling:resourceType="granite/ui/components/coral/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <column
+                            <well
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                sling:resourceType="granite/ui/components/coral/foundation/well">
                                 <items jcr:primaryType="nt:unstructured">
 
                                     <!-- Link Text -->
@@ -93,7 +100,7 @@
                                         emptyText="/content/learnaem/... or https://"/>
 
                                 </items>
-                            </column>
+                            </well>
                         </items>
                     </link>
 
