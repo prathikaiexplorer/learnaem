@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.learnaem</groupId>
+        <artifactId>learnaem</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>learnaem.ui.apps</artifactId>
+    <packaging>content-package</packaging>
+    <name>LearnAEM - UI Apps</name>
+    <description>AEM component definitions, HTL templates, dialogs, clientlibs</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.learnaem</groupId>
+            <artifactId>learnaem.core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.adobe.aem</groupId>
+            <artifactId>aem-sdk-api</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <sourceDirectory>src/main/content</sourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.jackrabbit</groupId>
+                <artifactId>filevault-package-maven-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <group>com.learnaem</group>
+                    <name>learnaem.ui.apps</name>
+                    <packageType>application</packageType>
+                    <allowIndexDefinitions>false</allowIndexDefinitions>
+                    <properties>
+                        <cloudManagerTarget>none</cloudManagerTarget>
+                    </properties>
+                    <repositoryStructurePackages>
+                        <repositoryStructurePackage>
+                            <groupId>com.learnaem</groupId>
+                            <artifactId>learnaem.ui.apps.structure</artifactId>
+                            <version>${project.version}</version>
+                        </repositoryStructurePackage>
+                    </repositoryStructurePackages>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
